@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import React, { useState } from 'react'
 import Filter from './Filter';
 // import Sort from './Sort';
@@ -57,35 +58,39 @@ const Home=()=>{
                 <button className="btn btn-primary" value="clear" onClick={onClickClear}>Clear</button>
             </section>
             <div className="homePageContainer-center">
+               {/* { Data.forEach((dataDetail,index) => { */}
                 {Data.map((dataDetail, index) => {
                     if( selectedClear === 0){
                     if(selectedSize=== dataDetail.size && selectedGender === dataDetail.gender && selectedBrand === dataDetail.brand && selectedClear=== "0"){
-                return <div className="homePageContainer">
-                    console.log("Changed");
-                    <div className="img-container">
-                        <img src={dataDetail.shirtImage} alt="shirtImage"/> 
-                    </div>
-                    <div className="homePageContainer-footer">
-                        <h1>{dataDetail.title}</h1>
-                        <h2>{dataDetail.price}</h2>
-                        <botton className="btn btn-primary btn-details" >Add to Cart</botton>
-                    </div>
+                return( 
+                    <div className="homePageContainer">
                     
-                    </div>
+                        <div className="img-container">
+                            <img src={dataDetail.shirtImage} alt="shirtImage"/> 
+                        </div>
+                        <div className="homePageContainer-footer">
+                            <h1>{dataDetail.title}</h1>
+                            <h2>{dataDetail.price}</h2>
+                            <botton className="btn btn-primary btn-details" >Add to Cart</botton>
+                        </div>
+                    
+                    </div>)
                 
                 }}
                 else{
-                    return <div className="homePageContainer">
-                    <div className="img-container">
-                        <img src={dataDetail.shirtImage} alt="shirtImage"/> 
-                    </div>
-                    <div className="homePageContainer-footer">
-                        <h1>{dataDetail.title}</h1>
-                        <h2>{dataDetail.price}</h2>
-                        <botton className="btn btn-primary btn-details" >Add to Cart</botton>
-                    </div>
+                    return (
+                        <div className="homePageContainer">
+                            <div className="img-container">
+                                <img src={dataDetail.shirtImage} alt="shirtImage"/> 
+                            </div>
+                            <div className="homePageContainer-footer">
+                                <h1>{dataDetail.title}</h1>
+                                <h2>{dataDetail.price}</h2>
+                                <botton className="btn btn-primary btn-details" >Add to Cart</botton>
+                            </div>
                     
-                    </div>
+                        </div>
+                    )
                 }
                 
                 

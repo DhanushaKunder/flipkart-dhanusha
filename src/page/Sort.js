@@ -1,11 +1,12 @@
+/* eslint-disable array-callback-return */
 import React, { useState } from 'react'
-import Filter from "./Filter"
+//import Filter from "./Filter"
 import Data from '../data.json'
 
 
 const Sort=({setSelectedClear, selectedClear, setSelectedPrice, selectedPrice})=>{
 
-    var sortedPriceArray=[]
+    //var sortedPriceArray=[]
     var priceArray=[]
     const [selected, setSelected]= useState();
     console.log(priceArray)
@@ -33,38 +34,10 @@ return(
                 priceArray=dataDetail.price;
                 console.log(priceArray);
 
-                sortedPriceArray=priceArray.sort;
+                //sortedPriceArray=priceArray.sort;
                 
 
-                {/* if(selected === "lth"){
                 
-                <Filter/>
-                return <div className="homePageContainer">
-                    <div className="img-container">
-                        <img src={dataDetail.shirtImage} alt="shirtImage"/> 
-                    </div>
-                    <div className="homePageContainer-footer">
-                        <h1>{dataDetail.title}</h1>
-                        <h2>{dataDetail.price}.sort</h2>
-                        <botton className="btn btn-primary btn-details" >Add to Cart</botton>
-                    </div>
-                    
-                    </div>
-                }
-                 else{
-                    return <div className="homePageContainer">
-                    <div className="img-container">
-                        <img src={dataDetail.shirtImage} alt="shirtImage"/> 
-                    </div>
-                    <div className="homePageContainer-footer">
-                        <h1>{dataDetail.title}</h1>
-                        <h2>{dataDetail.price}</h2>
-                        <botton className="btn btn-primary btn-details" >Add to Cart</botton>
-                    </div>
-                    
-                    </div>
-                } 
-                 */}
                 })};
             </div>
     </div>

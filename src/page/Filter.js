@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import React from 'react'
 import Data from '../data.json'
 
@@ -54,10 +55,9 @@ return(
 
         <div className="homePageContainer-center">
                 {Data.map((dataDetail, index) => {
-                
                 if(selectedSize=== dataDetail.size && selectedGender === dataDetail.gender && selectedBrand === dataDetail.brand){
                 
-                    return <div className="homePageContainer">
+                    return( <div className="homePageContainer">
                     <div className="img-container">
                         <img src={dataDetail.shirtImage} alt="shirtImage"/> 
                     </div>
@@ -67,7 +67,8 @@ return(
                         <botton className="btn btn-primary btn-details" >Add to Cart</botton>
                     </div>
                     
-                    </div> }
+                    </div> )
+                    }
                    
                 
                 })};
