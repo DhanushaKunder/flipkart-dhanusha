@@ -1,13 +1,197 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=KoHo:wght@300&display=swap');
+
+:root {
+  --primaryLightColor: #8DB8C5;
+  --primaryColor: #476a2e;
+  --mainWhite: #fff;
+  --mainBackground: #D0E2EA;
+  --mainBlack: #222;
+  --darkGrey: #5f5656;
+  --mainTransition: all 0.3s linear;
+  --mainSpacing: 0.3rem;
+  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  --mainBorderRadius: 0.25rem;
+  --smallWidth: 85vw;
+  --maxWidth: 40rem;
+  --fullWidth: 1170px;
+}
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'KoHo', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+  background: var(--mainBackground);
+  color: var(--mainBlack);
+}
+/**Header**/
+header{
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+  font-weight: bold;
+  border-style:ridge;
+
+}
+header input{
+  font-size: 1rem;
+  font-weight: bold;
+}
+/**Section**/
+
+section{
+  display: flex;
+  justify-content: center;
+  text-justify: auto;
+  /* justify-content: space-evenly; */
+}
+/**Option**/
+.option{
+  padding: 1rem 1.5rem;
+  margin-left: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+/**Filter and Sort option**/
+select{
+  border-radius: 0.5rem;
+  padding: 0 0.5rem;
+}
+/** Search**/
+.search{
+  margin-top: 1rem;
+  padding-bottom: 1rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.search-form{
+  width: var(--smallWidth);
+  margin: 0 auto;
+  max-width: 12.5rem;
+  background: var(--mainWhite);
+  padding: 0.5rem 0.5rem;
+  text-transform: capitalize;
+  border-radius: 0.5rem;
+  box-shadow: var(--lightShadow);
+}
+
+/**Button**/
+.btn,
+.btn-white,
+.btn-primary{
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  color: var(--primaryColor);
+  border: 2px solid var(--primaryColor);
+  padding: 0.45rem 0.8rem;
+  display: block;
+  transition: var(--mainTransition);
+  cursor: pointer;
+  font-size: 0.8rem;
+  background-color: transparent;
+  border-radius: var(--mainBorderRadius);
+  display: block;
+  
+}
+.btn:hover{
+  background: var(--primaryColor);
+  color: var(--mainWhite);
+}
+.btn-white{
+  background: transparent;
+  color: var(--mainWhite);
+  border-color: var(--mainWhite);
+}
+.btn-white:hover{
+  background: var(--mainWhite);
+  color: var(--primaryColor);
+}
+.btn-primary{
+  background: var(--primaryColor);
+  color: var(--mainWhite);
+  border-color: transparent;
+}
+.btn-primary:hover{
+  background:var(--primaryLightColor);
+  color: var(--primaryColor);
+}
+.btn-block {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  box-shadow: var(--lightShadow);
+  text-align: center;
+}
+.btn-details {
+  padding: 0.25rem 0.4rem;
+}
+.btn-details:hover {
+  background: var(--primaryLightColor);
+  border-color: var(--primaryLightColor);
+}
+
+/**Homepage**/
+.homePageContainer-center{
+  width: var(--smallWidth);
+  margin: 0 auto;
+  max-width: var(--fullWidth);
+  display: grid;
+  row-gap: 2rem;
+  column-gap: 2rem;
+  overflow: hidden;
+}
+@media screen and (min-width:576px){
+  .homePageContainer-center{
+    grid-template-columns: repeat(auto-fill, minmax(338.8px, 1fr));
+  }
+  
+}
+.homePageContainer {
+  background: var(--mainWhite);
+  margin-bottom: 2rem;
+  box-shadow: var(--lightShadow);
+  transition: var(--mainTransition);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  border-radius: var(--mainBorderRadius);
+  width: 90%;
+}
+.homePageContainer:hover {
+  box-shadow: var(--darkShadow);
+}
+img {
+  /* width: 80%; */
+  width: 100%;
+  display: block;
+  height: 50%;
+  overflow: hidden;
+ 
+}
+.homePageContainer img {
+  height: 30rem;
+  object-fit: cover;
+  overflow:hidden;
+  border-top-left-radius: var(--mainBorderRadius);
+  border-top-right-radius: var(--mainBorderRadius);
+}
+.homePageContainer-footer {
+  padding: 1.5rem;
+}
+.homePageContainer-footer h1,
+.homePageContainer-footer h2,
+.homePageContainer-footer p {
+  margin-bottom: 0.3rem;
+}
+.homePageContainer-footer h1 {
+  font-size: 2rem;
+}
+.homePageContainer-footer p {
+  color: var(--darkGrey);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
